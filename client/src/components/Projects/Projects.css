@@ -1,0 +1,106 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Smooth scrolling */
+.scrollbar-hide {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding: 0.5rem 0;
+}
+
+@media (min-width: 640px) {
+    .scrollbar-hide {
+        padding: 1rem 0;
+    }
+}
+
+/* Card hover effects */
+.project-card {
+    transition: all 0.3s ease;
+    scroll-snap-align: center;
+}
+
+@media (hover: hover) {
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-image:hover {
+        transform: scale(1.05);
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+    .project-card:active {
+        transform: scale(0.98);
+    }
+}
+
+/* Image hover zoom effect */
+.project-image {
+    transition: transform 0.3s ease;
+}
+
+/* Card entrance animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Staggered animation delays */
+@media (min-width: 640px) {
+    .project-card:nth-child(1) { animation-delay: 0.1s; }
+    .project-card:nth-child(2) { animation-delay: 0.2s; }
+    .project-card:nth-child(3) { animation-delay: 0.3s; }
+    .project-card:nth-child(4) { animation-delay: 0.4s; }
+    .project-card:nth-child(5) { animation-delay: 0.5s; }
+    .project-card:nth-child(6) { animation-delay: 0.6s; }
+}
+
+/* Mobile animation delays (faster) */
+@media (max-width: 639px) {
+    .project-card:nth-child(1) { animation-delay: 0.05s; }
+    .project-card:nth-child(2) { animation-delay: 0.1s; }
+    .project-card:nth-child(3) { animation-delay: 0.15s; }
+    .project-card:nth-child(4) { animation-delay: 0.2s; }
+    .project-card:nth-child(5) { animation-delay: 0.25s; }
+    .project-card:nth-child(6) { animation-delay: 0.3s; }
+}
+
+/* Gradient fade masks */
+.gradient-mask-l {
+    background: linear-gradient(to right, rgba(249, 250, 251, 1) 0%, rgba(249, 250, 251, 0) 100%);
+}
+
+.gradient-mask-r {
+    background: linear-gradient(to left, rgba(249, 250, 251, 1) 0%, rgba(249, 250, 251, 0) 100%);
+}
+
+/* Touch scrolling improvements */
+@media (pointer: coarse) {
+    .scrollbar-hide {
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+    }
+} 

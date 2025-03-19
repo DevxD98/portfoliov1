@@ -1,0 +1,61 @@
+.neon-gradient-background {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.neon-gradient-background.active {
+    opacity: 1;
+}
+
+@keyframes neonPulse {
+    0%, 100% {
+        filter: blur(clamp(30px, 8vw, 70px)) brightness(1);
+    }
+    50% {
+        filter: blur(clamp(40px, 10vw, 90px)) brightness(1.2);
+    }
+}
+
+.neon-gradient-0 {
+    background: radial-gradient(circle at center,
+        rgba(255, 0, 128, 0.4) 0%,
+        rgba(255, 0, 255, 0.3) clamp(20%, 30%, 40%),
+        rgba(128, 0, 255, 0.2) clamp(40%, 50%, 60%),
+        transparent clamp(70%, 80%, 90%)
+    );
+    animation: neonPulse 3s ease-in-out infinite;
+}
+
+.neon-gradient-1 {
+    background: radial-gradient(circle at center,
+        rgba(0, 255, 255, 0.4) 0%,
+        rgba(0, 128, 255, 0.3) clamp(20%, 30%, 40%),
+        rgba(0, 0, 255, 0.2) clamp(40%, 50%, 60%),
+        transparent clamp(70%, 80%, 90%)
+    );
+    animation: neonPulse 3s ease-in-out infinite;
+}
+
+.neon-gradient-2 {
+    background: radial-gradient(circle at center,
+        rgba(0, 255, 128, 0.4) 0%,
+        rgba(128, 255, 0, 0.3) clamp(20%, 30%, 40%),
+        rgba(255, 255, 0, 0.2) clamp(40%, 50%, 60%),
+        transparent clamp(70%, 80%, 90%)
+    );
+    animation: neonPulse 3s ease-in-out infinite;
+}
+
+.neon-gradient-3 {
+    background: radial-gradient(circle at center,
+        rgba(255, 128, 0, 0.4) 0%,
+        rgba(255, 64, 0, 0.3) clamp(20%, 30%, 40%),
+        rgba(255, 0, 0, 0.2) clamp(40%, 50%, 60%),
+        transparent clamp(70%, 80%, 90%)
+    );
+    animation: neonPulse 3s ease-in-out infinite;
+}
