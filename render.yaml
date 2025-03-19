@@ -3,8 +3,8 @@ services:
     name: portfolio-server
     env: node
     buildCommand: npm install
-    startCommand: node server.js
-    rootDirectory: server
+    startCommand: node server/server.js
+    rootDirectory: .
     envVars:
       - key: NODE_ENV
         value: production
