@@ -2,15 +2,15 @@
   "version": 2,
   "builds": [
     {
+      "src": "server/server.js",
+      "use": "@vercel/node"
+    },
+    {
       "src": "client/package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "build"
       }
-    },
-    {
-      "src": "server/server.js",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -25,5 +25,10 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ]
+  ],
+  "env": {
+    "MONGODB_URI": "@mongodb_uri",
+    "PORT": "8000",
+    "NODE_ENV": "production"
+  }
 }
