@@ -2,9 +2,9 @@ services:
   - type: web
     name: portfolio-server
     env: node
-    buildCommand: npm install
-    startCommand: node server/server.js
-    rootDirectory: .
+    buildCommand: cd server && npm install
+    startCommand: node server.js
+    rootDirectory: server  # Fix: Set backend root to "server"
     envVars:
       - key: NODE_ENV
         value: production
