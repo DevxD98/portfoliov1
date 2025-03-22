@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
     "server": "cd server && npm start",
     "client": "cd client && npm start",
-    "install-all": "npm install && cd client && npm install && cd ../server && npm install"
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "build": "cd client && npm run build && cd ../server && npm run build"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
