@@ -28,7 +28,6 @@
     }
   ],
   "env": {
-    "MONGODB_URI": "@mongodb_uri",
     "PORT": "8000",
     "REACT_APP_LASTFM_API_KEY": "@lastfm_api_key",
     "REACT_APP_LASTFM_USERNAME": "@lastfm_username"
